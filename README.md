@@ -4,9 +4,12 @@
 - Only allow purchases, mint and burn if the contract is not paused
 	- `whenNotPaused` modifier
 - Uses [operator-filter-registry](https://github.com/ProjectOpenSea/operator-filter-registry) from OpenSea to enforce royalties
-- Only allow trading after the release timestamp
+    - Not a foolproof approach
+- Only allow trading the tokens after the release timestamp (trading lockup period)
 	- `onlyAfterRelease` modifier
 - Allow holders to burn their tokens
+    - Once a token is burnt, it should not be part of the collection anymore
+
 ## Functions
 
 ### Public
